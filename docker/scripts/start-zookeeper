@@ -82,6 +82,7 @@ DATA_DIR="/var/lib/zookeeper/data"
 DATA_LOG_DIR="/var/lib/zookeeper/log"
 LOG_DIR="/var/log/zookeeper"
 CONF_DIR="/opt/zookeeper/conf"
+QUORUM_LISTEN_ON_ALL_IPS="true"
 CLIENT_PORT=2181
 SERVER_PORT=2888
 ELECTION_PORT=3888
@@ -193,6 +194,7 @@ function create_config() {
     echo "tickTime=$TICK_TIME" >> $CONFIG_FILE
     echo "initLimit=$INIT_LIMIT" >> $CONFIG_FILE
     echo "syncLimit=$SYNC_LIMIT" >> $CONFIG_FILE
+    echo "quorumListenOnAllIPs=$QUORUM_LISTEN_ON_ALL_IPS" >> $CONFIG_FILE
     echo "maxClientCnxns=$MAX_CLIENT_CNXNS" >> $CONFIG_FILE
     echo "minSessionTimeout=$MIN_SESSION_TIMEOUT" >> $CONFIG_FILE
     echo "maxSessionTimeout=$MAX_SESSION_TIMEOUT" >> $CONFIG_FILE
